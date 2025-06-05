@@ -1,0 +1,53 @@
+1.
+down-size:https://www.oracle.com/database/technologies/appdev/xe.html
+SQL*Plus: Release 21.0.0.0.0 - Production on 水 6月 4 10:57:09 2025
+Version 21.3.0.0.0
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+ユーザー名を入力してください: / as sysdba
+(/ as sysdbaは、最も強い管理者ユーザー「SYS」でログインしているのと同じです。)
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+に接続されました。
+
+2.
+SQL> select name from v$pdbs;
+(v$pdbs は、CDB（コンテナ・データベース）に含まれる PDB（プラガブル・データベース）一覧を表示するビューです。)
+NAME
+--------------------------------------------------------------------------------
+PDB$SEED(新しいPDBを作成するためのテンプレート（読み取り専用）)
+XEPDB1(事前準備されたプラガブル・データベース)
+
+3.
+SQL> connect sys/インストール時のパスワード@HOSTNAME:1521/XEPDB1 as sysdba;
+(このコードは、Oracleデータベースに対して「最上位の管理者権限（SYSDBA）」を使って、sysユーザーとして接続するコマンドです。)
+(sysdbaは Oracle データベースの「スーパーユーザー権限」です)
+(sysユーザーはOracleデータベースにおける最上位の管理者アカウントであり、すべての操作が可能です。)
+(HOSTNAMEはcmdに確認できます)
+
+4.
+SQL> CREATE USER demouser IDENTIFIED BY ****** DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
+（demouser という新しいユーザーを、パスワード ****** で作成し、デフォルトの表領域を users に設定する。さらに、このユーザーは users 表領域を容量制限なく自由に使えるようにする。）
+5.
+SQL> grant create session, create table to demouser;
+（権限付与）
+
+6. SQL> create table testtable(testclo number);
+
+表が作成されました。
+
+SQL> insert into testtable values(11111);
+
+1行が作成されました。
+
+SQL> commit;
+
+コミットが完了しました。
+
+SQL> select * from testtable;
+
+   TESTCLO
+----------
+     11111
+
+Isnrctl status
+lsnrctl status は、Oracle Listener の現在の状態を確認するためのコマンドで、リスナーが動作しているか、リスニングしているポートや登録されているデータベースサービスを表示します。
