@@ -7,7 +7,7 @@ There was a yellow warning line under the version check.
 The reason was: I downloaded a pre-configured package that included Java,Spring and Eclipse,
 so I had NO IDEA ABOUT MY SPRING VERSION UNLESS I ASKED THE AUTHORITY.
 
-SO, DO NOT DOWNLOAD ANYTHING YOU DON'T KNOW TO YOUR COMPUTER!!!
+SO, DO NOT DOWNLOAD ANYTHING YOU ARE NOT FAMILIAR WITH TO YOUR COMPUTER!!!
 
 It’s important to clearly know which version of Spring Boot you are using to avoid compatibility issues.
 ________________________________________
@@ -20,6 +20,11 @@ Certain packages like:
 cannot always be downloaded automatically by Maven.
 Be careful when you see red error lines in your Eclipse. Check the messages and fix your Maven settings if necessary.
 
-AND AGAIN, DO NOT DOWNLOAD ANYTHING YOU DON'T KNOW TO YOUR COMPUTER!!!
+AND AGAIN, DO NOT DOWNLOAD ANYTHING YOU ARE NOT FAMILIAR WITH TO YOUR COMPUTER!!!
 
 (Luckily, it was on the laptop provided by my company.If it had been my own machine, I definitely would have wiped everything and done a full reset!)
+________________________________________
+
+3.
+Although my senior and I fixed all the issues we could identify, the database still won't connect. (I’m really frustrated with Oracle!)
+ONCE AGAIN! DO NOT DOWNLOAD ANYTHING YOU ARE NOT FAMILIAR WITH TO YOUR COMPUTER!!!
